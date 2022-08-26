@@ -3,6 +3,9 @@ import 'package:pdpbestanim/pages/home_page.dart';
 import 'package:pdpbestanim/pages/home_page3.dart';
 import 'package:pdpbestanim/pages/home_page4.dart';
 import 'package:pdpbestanim/pages/home_page5.dart';
+import 'package:pdpbestanim/pages/home_page6.dart';
+import 'package:pdpbestanim/pages/homework1.dart';
+import 'package:pdpbestanim/pages/homework2.dart';
 import 'package:pdpbestanim/pages/hope_page2.dart';
 
 void main() {
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: HomePage5(),
+      home: HomeWork2(),
     );
   }
 }

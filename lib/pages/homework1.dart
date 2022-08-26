@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HomePage2 extends StatefulWidget {
-  const HomePage2({Key? key}) : super(key: key);
+class Homework1 extends StatefulWidget {
+  const Homework1({Key? key}) : super(key: key);
 
   @override
-  State<HomePage2> createState() => _HomePage2State();
+  State<Homework1> createState() => _Homework1State();
 }
 
-class _HomePage2State extends State<HomePage2>
+class _Homework1State extends State<Homework1>
     with SingleTickerProviderStateMixin {
-
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -18,18 +17,18 @@ class _HomePage2State extends State<HomePage2>
     // TODO: implement initState
     super.initState();
 
-    _controller = AnimationController(vsync: this, duration:
-    const Duration(milliseconds: 1000));
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    );
 
     _animation = Tween<double>(
-      begin:  Size(100,100).longestSide,
-      end:    Size(120,120).longestSide
-    ).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.bounceIn)
-    ) as Animation<double>;
+      begin: const Size(100, 100).longestSide,
+      end: const Size(100, 200).longestSide,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.bounceIn));
 
     _controller.addStatusListener((AnimationStatus status) {
-      if(status == AnimationStatus.completed){
+      if (status == AnimationStatus.completed) {
         _controller.repeat();
       }
     });
@@ -49,14 +48,14 @@ class _HomePage2State extends State<HomePage2>
         title: const Text('Flutter Animation'),
       ),
       body: Center(
-        child: AnimatedBuilder(animation: _animation,
-        builder: (ctx,ch) => SizedBox(
-          width: _animation.value,
+        child: AnimatedBuilder(
+          animation: _animation,
+          builder: (ctx, ch) => SizedBox(
+            width: _animation.value,
             height: _animation.value,
-
-            child: Image.asset('assets/images/img.jpg'),
+            child: Image.asset('assets/images/heart.png'),
+          ),
         ),
-        )
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
